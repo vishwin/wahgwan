@@ -2,7 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy|Oxygen:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Chewy|Oxygen:300,400,700');
 
 * {
 	margin: 0;
@@ -20,11 +20,10 @@ body {
 header {
 	background-color: #002626;
 	border-bottom: 5px solid #009999;
-	padding: 10px;
-	padding-bottom: 0;
+	padding: 0 10px;
 	
 	h1 {
-		font-family: "Luckiest Guy", sans-serif;
+		font-family: Chewy, sans-serif;
 		font-weight: 400;
 		font-size: 4em;
 	}
