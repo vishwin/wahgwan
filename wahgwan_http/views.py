@@ -6,7 +6,7 @@ from flask import render_template, Response, abort
 from flask_libsass import *
 import pkg_resources
 from slimit import minify
-from wahgwan_http import app
+from wahgwan_http import app, cache
 
 Sass(
 	{'app': 'scss/app.scss'},
@@ -19,11 +19,14 @@ Sass(
 @app.route('/static/js/<js>')
 def render_js(js):
 	try:
-		fd=open(pkg_resources.resource_filename('wahgwan_http.views', 'js/' + js), encoding='UTF-8')
-		out=minify(fd.read(), mangle=True, mangle_toplevel=True)
-		fd.close()
+		out=cache.get(js)
+		if out is None:
+			fd=open(pkg_resources.resource_filename('wahgwan_http.views', 'js/' + js), encoding='UTF-8')
+			out=minify(fd.read(), mangle=True, mangle_toplevel=True)
+			fd.close()
+			cache.set(js, out)
 		return Response(response=out, mimetype='text/javascript')
-	except IOError:
+	except OSError:
 		abort(404)
 
 @app.route('/')

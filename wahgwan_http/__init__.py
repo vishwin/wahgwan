@@ -3,8 +3,12 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 from flask import Flask
-import pkg_resources
+from werkzeug.contrib.cache import MemcachedCache
 
 app=Flask(__name__)
+app.config.from_object('config')
+
+# set up a memcached Werkzeug cache, prefixing each key, with adjustable timeout
+cache=MemcachedCache(servers=app.config['MEMCACHED_SERVERS'], key_prefix=app.config['MEMCACHED_KEYPREFIX'], default_timeout=app.config['MEMCACHED_TIMEOUT'])
 
 import wahgwan_http.views
