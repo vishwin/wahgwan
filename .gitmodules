@@ -1,0 +1,3 @@
+[submodule "wahgwan_http/Font-Awesome"]
+	path = wahgwan_http/Font-Awesome
+	url = https://github.com/FortAwesome/Font-Awesome
