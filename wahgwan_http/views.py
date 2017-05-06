@@ -3,18 +3,12 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 from flask import render_template, Response, abort, send_file
-from flask_libsass import *
 import pkg_resources
+from sassutils.wsgi import SassMiddleware
 from slimit import minify
 from wahgwan_http import app, cache
 
-Sass(
-	{'app': 'scss/app.scss'},
-	app,
-	url_path='/static/css',
-	include_paths=[pkg_resources.resource_filename('wahgwan_http', 'scss')],
-	output_style='compressed'
-)
+app.wsgi_app=SassMiddleware(app.wsgi_app, {'wahgwan_http': ('scss', 'static/css', 'static/css')})
 
 @app.route('/static/fonts/<fontfile>')
 def fontawesome_file(fontfile):

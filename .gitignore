@@ -2,3 +2,4 @@
 *.wsgi
 config.py
 node_modules/
+wahgwan_http/static/css/
