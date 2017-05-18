@@ -1,5 +1,17 @@
+# python setuptools
+*.egg*
+build/
+dist/
 *.pyc
-*.wsgi
+
+# sensitive information
 config.py
+
+# the WSGI executable
+*.wsgi
+
 node_modules/
-wahgwan_http/static/css/
+wahgwan_http/generated/css/*
+!wahgwan_http/generated/css/.keep
+wahgwan_http/generated/js/*
+!wahgwan_http/generated/js/.keep

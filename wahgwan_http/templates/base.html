@@ -2,21 +2,29 @@
    License, v. 2.0. If a copy of the MPL was not distributed with this
    file, You can obtain one at http://mozilla.org/MPL/2.0/. #}
 <!DOCTYPE html>
-<html>
+<html class="no-js">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<title>Wahgwan Industry Limited</title>
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/app.scss.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/app.css') }}">
 </head>
 <body>
 <header>
-	<h1><span style="color: #FF5555;">W</span><span style="color: #FFFF00;">A</span><span style="color: #FF00FF;">H</span><span style="color: #00FF00;">G</span><span style="color: #FF5555;">W</span><span style="color: #FFFF00;">A</span><span style="color: #FF00FF;">N</span></h1>
-</header>{% block body %}
-{% endblock %}<footer>
+	<h1 style="font-family: Chewy, sans-serif;"><span style="color: #FF5555;">W</span><span style="color: #FFFF00;">A</span><span style="color: #FF00FF;">H</span><span style="color: #00FF00;">G</span><span style="color: #FF5555;">W</span><span style="color: #FFFF00;">A</span><span style="color: #FF00FF;">N</span></h1>
+</header>
+{% block body %}
+{% endblock %}
+<footer>
 Copyright &copy; 2017 Wahgwan Industry Limited
 </footer>
 
 <script type="text/javascript" src="/static/js/email.js"></script>
+<script type="text/javascript" src="/static/js/vendor/jquery.js"></script>
+<script type="text/javascript" src="/static/js/vendor/foundation.js"></script>
+<script type="text/javascript">
+$(document).foundation();
+</script>
 </body>
 </html>

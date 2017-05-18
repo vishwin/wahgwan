@@ -4,11 +4,12 @@
 
 from flask import render_template, Response, abort, send_file
 import pkg_resources
-from sassutils.wsgi import SassMiddleware
 from slimit import minify
 from wahgwan_http import app, cache
 
-app.wsgi_app=SassMiddleware(app.wsgi_app, {'wahgwan_http': ('scss', 'static/css', 'static/css')})
+@app.route('/static/css/<css>.css')
+def send_css(css):
+	return send_file(pkg_resources.resource_filename('wahgwan_http', 'generated/css/' + css + '.scss.css'), mimetype='text/css')
 
 @app.route('/static/fonts/<fontfile>')
 def fontawesome_file(fontfile):
@@ -26,6 +27,14 @@ def render_js(js):
 		return Response(response=out, mimetype='text/javascript')
 	except OSError:
 		abort(404)
+
+@app.route('/static/js/vendor/foundation.js')
+def send_foundation_js():
+	return send_file(pkg_resources.resource_filename('wahgwan_http', 'node_modules/foundation-sites/dist/js/foundation.min.js'), mimetype='text/javascript')
+
+@app.route('/static/js/vendor/jquery.js')
+def send_jquery_js():
+	return send_file(pkg_resources.resource_filename('wahgwan_http', 'node_modules/foundation-sites/vendor/jquery/dist/jquery.min.js'), mimetype='text/javascript')
 
 @app.route('/')
 def index():

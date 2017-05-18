@@ -1,0 +1,6 @@
+include LICENCE
+include wahgwan_http/generated/css/.keep
+recursive-include wahgwan_http/js *
+recursive-include wahgwan_http/scss *
+recursive-include wahgwan_http/static *
+recursive-include wahgwan_http/templates *
