@@ -13,6 +13,36 @@
 @include foundation-flex-classes;
 @include foundation-typography;
 @include foundation-menu;
-@include foundation-top-bar;
 @include foundation-visibility-classes;
 @include foundation-float-classes;
+
+.top-bar {
+	@include top-bar-container;
+	@include top-bar-stacked;
+	@include breakpoint($topbar-unstack-breakpoint) {
+		@include top-bar-unstack;
+	}
+	@each $size in $breakpoint-classes {
+		@if $size != $-zf-zero-breakpoint {
+			&.stacked-for-#{size} {
+				@include breakpoint($size down) {
+					@include top-bar-stacked;
+				}
+			}
+		}
+	}
+	
+	border-bottom: $topbar-border-bottom;
+}
+	
+.top-bar-title {
+	flex: 0 0 auto;
+	margin: $topbar-title-spacing;
+	font-family: $topbar-title-font-family;
+	font-size: $topbar-title-font-size;
+}
+
+.top-bar-left,
+.top-bar-right {
+	flex: 0 0 auto;
+}

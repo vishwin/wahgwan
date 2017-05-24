@@ -11,8 +11,17 @@
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/app.css') }}">
 </head>
 <body>
-<header>
-	<h1 style="font-family: Chewy, sans-serif;"><span style="color: #FF5555;">W</span><span style="color: #FFFF00;">A</span><span style="color: #FF00FF;">H</span><span style="color: #00FF00;">G</span><span style="color: #FF5555;">W</span><span style="color: #FFFF00;">A</span><span style="color: #FF00FF;">N</span></h1>
+<header class="top-bar">
+	<div class="top-bar-title">
+		<span style="color: #FF5555;">W</span><span style="color: #FFFF00;">A</span><span style="color: #FF00FF;">H</span><span style="color: #00FF00;">G</span><span style="color: #FF5555;">W</span><span style="color: #FFFF00;">A</span><span style="color: #FF00FF;">N</span>
+	</div>
+	<div>
+		<nav class="top-bar-right">
+			<ul class="menu">
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</nav>
+	</div>
 </header>
 {% block body %}
 {% endblock %}
