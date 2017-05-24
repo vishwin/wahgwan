@@ -40,6 +40,7 @@
 //  35. Title Bar
 //  36. Tooltip
 //  37. Top Bar
+//  38. Footer
 
 @import '../node_modules/foundation-sites/scss/util/util';
 
@@ -621,3 +622,9 @@ $topbar-title-font-size: 3rem;
 $topbar-input-width: 200px;
 $topbar-unstack-breakpoint: medium;
 $topbar-border-bottom: 5px solid #009999;
+
+// 38. Footer
+// ----------
+
+$footer-border: 3px solid #004949;
+$footer-font-size: $small-font-size;

@@ -9,8 +9,8 @@
 @import "../node_modules/foundation-sites/scss/foundation";
 
 @include foundation-global-styles;
-@include foundation-flex-grid;
 @include foundation-flex-classes;
+@include foundation-flex-grid;
 @include foundation-typography;
 @include foundation-menu;
 @include foundation-visibility-classes;
@@ -45,4 +45,11 @@
 .top-bar-left,
 .top-bar-right {
 	flex: 0 0 auto;
+}
+
+footer {
+	text-align: center;
+	font-size: $footer-font-size;
+	border-top: $footer-border;
+	border-bottom: $footer-border;
 }
