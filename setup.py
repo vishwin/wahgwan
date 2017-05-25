@@ -8,7 +8,7 @@ setup(
 	author='Charlie Li',
 	license='MPL-2.0',
 	packages=find_packages(),
-	install_requires=['Flask', 'markdown', 'slimit', 'Pillow', 'exifread', 'pylibmc'],
+	install_requires=['Flask', 'markdown', 'slimit', 'pylibmc', 'Pillow', 'exifread', 'cairosvg'],
 	setup_requires=['libsass>=0.6.0'],
 	sass_manifests={'wahgwan_http': ('scss', 'generated/css', 'static/css')},
 	include_package_data=True,

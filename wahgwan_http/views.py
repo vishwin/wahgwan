@@ -4,8 +4,14 @@
 
 from flask import render_template, Response, abort, send_file
 import pkg_resources
-from slimit import minify
 from wahgwan_http import app, cache
+
+from slimit import minify
+from mimetypes import guess_type
+import os.path
+from PIL import Image
+import xml.etree.ElementTree as ET
+from cairosvg import svg2png
 
 @app.route('/static/css/<css>.css')
 def send_css(css):
@@ -35,6 +41,29 @@ def send_foundation_js():
 @app.route('/static/js/vendor/jquery.js')
 def send_jquery_js():
 	return send_file(pkg_resources.resource_filename('wahgwan_http', 'node_modules/foundation-sites/vendor/jquery/dist/jquery.min.js'), mimetype='text/javascript')
+
+@app.route('/static/img/<imgfile>')
+def return_img(imgfile):
+	imgpath=pkg_resources.resource_filename('wahgwan_http', 'img/' + imgfile)
+	try:
+		return send_file(imgpath, mimetype=guess_type(imgpath)[0])
+	except OSError:
+		abort(404)
+
+@app.route('/static/img/<width>px-<svgfile>.svg.png')
+def svg_thumb(width, svgfile):
+	try:
+		imgpath=pkg_resources.resource_filename('wahgwan_http', 'img/' + svgfile + '.svg')
+		thumbfile=width + 'px-' + svgfile + '.svg.png'
+		thumbpath=pkg_resources.resource_filename('wahgwan_http', 'generated/thumb/' + thumbfile)
+		# get file modified time for original; will throw exception if not found
+		mtime_orig=os.path.getmtime(imgpath)
+		if not (os.path.isfile(thumbpath)) or (os.path.getmtime(thumbpath) < mtime_orig):
+			width_orig=float(ET.parse(imgpath).getroot().get('width'))
+			svg2png(url=imgpath, write_to=thumbpath, scale=(int(width) / width_orig))
+		return send_file(thumbpath, mimetype='image/png')
+	except OSError:
+		abort(404)
 
 @app.route('/')
 def index():
