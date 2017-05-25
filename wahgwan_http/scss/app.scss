@@ -9,10 +9,12 @@
 @import "../node_modules/foundation-sites/scss/foundation";
 
 @include foundation-global-styles;
-@include foundation-flex-classes;
 @include foundation-flex-grid;
+@include foundation-flex-classes;
 @include foundation-typography;
+@include foundation-button;
 @include foundation-menu;
+@include foundation-menu-icon;
 @include foundation-visibility-classes;
 @include foundation-float-classes;
 
