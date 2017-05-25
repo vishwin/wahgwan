@@ -33,6 +33,16 @@
 	}
 	
 	border-bottom: $topbar-border-bottom;
+	
+	a {
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	
+	.menu {
+		font-weight: 700;
+	}
 }
 	
 .top-bar-title {
