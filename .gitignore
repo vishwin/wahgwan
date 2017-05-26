@@ -15,3 +15,5 @@ wahgwan_http/generated/css/*
 !wahgwan_http/generated/css/.keep
 wahgwan_http/generated/js/*
 !wahgwan_http/generated/js/.keep
+wahgwan_http/generated/thumb/*
+!wahgwan_http/generated/thumb/.keep

@@ -65,6 +65,24 @@ def svg_thumb(width, svgfile):
 	except OSError:
 		abort(404)
 
+@app.route('/static/img/<width>px-<imgfile>')
+def render_thumb(width, imgfile):
+	try:
+		imgpath=pkg_resources.resource_filename('wahgwan_http', 'img/' + imgfile)
+		# if original image does not exist, immediately 404
+		img=Image.open(imgpath)
+		imgformat=img.format
+		thumbfile=width + 'px-' + imgfile
+		thumbpath=pkg_resources.resource_filename('wahgwan_http', 'generated/thumb/' + thumbfile)
+		mtime_orig=os.path.getmtime(imgpath)
+		if not (os.path.isfile(thumbpath)) or (os.path.getmtime(thumbpath) < mtime_orig):
+			img.thumbnail((int(width), int(width) / (img.width / img.height)))
+			img.save(thumbpath, imgformat)
+		img.close()
+		return send_file(thumbpath, mimetype=imgformat)
+	except OSError:
+		abort(404)
+
 @app.route('/')
 def index():
 	return render_template('index.html')
