@@ -91,6 +91,10 @@ def index():
 def about():
 	return render_template('about.html', title='About us')
 
+@app.route('/specialty/')
+def specialty():
+	return render_template('specialty.html', title='Specialty work')
+
 @app.route('/contact/')
 def contact():
 	return render_template('contact.html', title='Contact')
