@@ -7,7 +7,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Wahgwan Industry Limited</title>
+	<title>{% if title %}{{ title|e }}&nbsp;&ndash;&nbsp;{% endif %}Wahgwan Industry Limited</title>
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/app.css') }}">
 </head>
 <body>
@@ -21,11 +21,11 @@
 	<div id="responsive-top-bar">
 		<nav class="top-bar-right">
 			<ul class="vertical medium-horizontal menu">
-				<li><a href="#">About</a></li>
-				<li><a href="#">Consulting</a></li>
-				<li><a href="#">Development</a></li>
-				<li><a href="#">Specialty</a></li>
-				<li><a class="imail">Contact</a></li>
+				<li><a href="/about/">About</a></li>
+				<li><a href="/consulting/">Consulting</a></li>
+				<li><a href="/development/">Development</a></li>
+				<li><a href="/specialty/">Specialty</a></li>
+				<li><a href="/contact/">Contact</a></li>
 			</ul>
 		</nav>
 	</div>
