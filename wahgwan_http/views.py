@@ -40,7 +40,7 @@ def send_foundation_js():
 
 @app.route('/static/js/vendor/jquery.js')
 def send_jquery_js():
-	return send_file(pkg_resources.resource_filename('wahgwan_http', 'node_modules/foundation-sites/vendor/jquery/dist/jquery.min.js'), mimetype='text/javascript')
+	return send_file(pkg_resources.resource_filename('wahgwan_http', 'node_modules/jquery/dist/jquery.min.js'), mimetype='text/javascript')
 
 @app.route('/static/img/<imgfile>')
 def return_img(imgfile):
