@@ -14,9 +14,9 @@
 @include foundation-typography;
 @include foundation-forms;
 @include foundation-button;
+@include foundation-callout;
 @include foundation-menu;
 @include foundation-menu-icon;
-@include foundation-orbit;
 @include foundation-visibility-classes;
 @include foundation-float-classes;
 
@@ -66,4 +66,13 @@ footer {
 	font-size: $footer-font-size;
 	border-top: $footer-border;
 	border-bottom: $footer-border;
+}
+
+.hero-main {
+	@include callout-base;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/static/img/17_06_27-142.jpg');
+	background-size: cover;
+	background-position: center;
+	border: 0;
+	padding: 3rem;
 }

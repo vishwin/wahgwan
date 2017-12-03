@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
 	name='wahgwan-http',
-	version='17.11.25',
+	version='17.12.03',
 	description='The wahgwan.xyz HTTP interface',
 	url='https://git.vishwin.info/site/wahgwan.git/',
 	author='Charlie Li',
