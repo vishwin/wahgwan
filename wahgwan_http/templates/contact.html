@@ -8,5 +8,40 @@
 <p>Please feel free to contact us regarding anything on our site, the services we offer or any other technology questions. <em><strong>We are here to help you!</strong></em></p>
 <p><strong>Please note</strong> that you <em>must</em> contact us by <a class="imail"><strong>email</strong></a> first. This includes having our business cards in hand, in which case use the direct email on the card. A consultant will respond back to you via email with further contact information or an appointment.</p>
 <p>Telephone calls or any other form of communication without previous email correspondance establishing enough of a business relationship will be ignored without warning.</p>
+
+<form method="POST" action="/formmail/">
+	<div class="grid-container">
+		<div class="grid-x grid-padding-x">
+			<div class="medium-6 cell">
+				<label>Name
+					<input name="realname" type="text" placeholder="realname" required>
+				</label>
+			</div>
+			<div class="medium-6 cell">
+				<label>Email
+					<input name="email" type="text" placeholder="email" required>
+				</label>
+			</div>
+		</div>
+		<div class="grid-x grid-padding-x">
+			<div class="cell">
+				<label>Subject
+					<input name="subject" type="text" placeholder="subject" required>
+				</label>
+			</div>
+		</div>
+		<div class="grid-x grid-padding-x">
+			<div class="cell">
+				<textarea name="comment" placeholder="comment"></textarea>
+			</div>
+		</div>
+		<input name="recipient" type="hidden" value="vishwin@localhost">
+		<div class="grid-x grid-padding-x">
+			<div class="cell">
+				<input type="submit" value="Submit" class="button">
+			</div>
+		</div>
+	</div>
+</form>
 </div>
 {% endblock %}
