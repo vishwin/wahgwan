@@ -95,10 +95,6 @@ def about():
 def consulting():
 	return render_template('consulting.html', title='Consulting')
 
-@app.route('/development/')
-def development():
-	return render_template('development.html', title='Development')
-
 @app.route('/specialty/')
 def specialty():
 	return render_template('specialty.html', title='Specialty work')
