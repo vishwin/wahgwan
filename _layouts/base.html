@@ -1,0 +1,54 @@
+{% comment %}
+This Source Code Form is subject to the terms of the Mozilla Public
+License, v. 2.0. If a copy of the MPL was not distributed with this
+file, You can obtain one at http://mozilla.org/MPL/2.0/.
+{% endcomment %}
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>{% if page.title %}{{ page.title }}&nbsp;&ndash;&nbsp;{% endif %}Wahgwan Industry Limited</title>
+	<link rel="stylesheet" type="text/css" href="/css/app.css">
+</head>
+<body>
+<header class="top-bar">
+	<div class="top-bar-title">
+		<a href="/"><span style="color: #FF5555;">W</span><span style="color: #FFFF00;">A</span><span style="color: #FF00FF;">H</span><span style="color: #00FF00;">G</span><span style="color: #FF5555;">W</span><span style="color: #FFFF00;">A</span><span style="color: #FF00FF;">N</span></a>
+		<span data-responsive-toggle="responsive-top-bar" data-hide-for="medium">
+			<button class="menu-icon" type="button" data-toggle></button>
+		</span>
+	</div>
+	<div id="responsive-top-bar">
+		<nav class="top-bar-right">
+			<ul class="vertical medium-horizontal menu">
+				<li{% if page.title contains "About" %} class="is-active"{% endif %}><a href="/about.html">About</a></li>
+				<li><a href="http://blog.wahgwan.xyz/">Blog</a></li>
+				<li{% if page.title contains "Consulting" %} class="is-active"{% endif %}><a href="/consulting.html">Consulting</a></li>
+				<li{% if page.title contains "Specialty" %} class="is-active"{% endif %}><a href="/specialty.html">Specialty</a></li>
+				<li{% if page.title contains "Contact" %} class="is-active"{% endif %}><a href="/contact.html">Contact</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+{{ content }}
+<footer class="align-middle">
+	A proud member of:
+	<div class="grid-container fluid"><div class="grid-x align-middle">
+		<div class="small-6 medium-auto cell"><a href="http://www.mlcc.org/" title="Main Line Chamber of Commerce"><img alt="MLCC" data-interchange="[{% asset MLCC.png magick:resize=100 @path %}, small], [{% asset MLCC.png magick:resize=120 @path %}, medium]"></a></div>
+		<div class="small-6 medium-auto cell"><img alt="DVBPN" data-interchange="[{% asset DVBPN.png magick:resize=150 @path %}, small], [{% asset DVBPN.png magick:resize=240 @path %}, medium]"></div>
+		<div class="small-6 medium-auto cell"><a href="http://www.localentrepreneurnetwork.com/">Local Entrepreneur Network</a></div>
+		<div class="small-6 medium-auto cell"><a href="http://www.phillylinux.org/" title="Philadelphia Linux Users Group"><img alt="PLUG" data-interchange="[{% asset PLUG.png magick:resize=100 @path %}, small], [{% asset PLUG.png magick:resize=150 @path %}, medium]"></a></div>
+	</div></div>
+	Copyright &copy; 2018 Wahgwan Industry Limited
+</footer>
+
+{% asset email.min.js %}
+{% asset jquery.min.js %}
+{% asset foundation.min.js %}
+<script type="text/javascript">
+$(document).foundation();
+</script>
+</body>
+</html>

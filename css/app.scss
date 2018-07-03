@@ -1,0 +1,80 @@
+---
+---
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import url('https://fonts.googleapis.com/css?family=Chewy|Oxygen:300,400,700');
+
+@import "settings";
+@import "../node_modules/foundation-sites/scss/foundation";
+
+@include foundation-global-styles;
+@include foundation-xy-grid-classes;
+@include foundation-flex-classes;
+@include foundation-typography;
+@include foundation-forms;
+@include foundation-button;
+@include foundation-callout;
+@include foundation-menu;
+@include foundation-menu-icon;
+@include foundation-visibility-classes;
+@include foundation-float-classes;
+
+.top-bar {
+	@include top-bar-container;
+	@include top-bar-stacked;
+	@include breakpoint($topbar-unstack-breakpoint) {
+		@include top-bar-unstack;
+	}
+	@each $size in $breakpoint-classes {
+		@if $size != $-zf-zero-breakpoint {
+			&.stacked-for-#{size} {
+				@include breakpoint($size down) {
+					@include top-bar-stacked;
+				}
+			}
+		}
+	}
+	
+	border-bottom: $topbar-border-bottom;
+	
+	a {
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	
+	.menu {
+		font-weight: 700;
+	}
+}
+	
+.top-bar-title {
+	flex: 0 0 auto;
+	margin: $topbar-title-spacing;
+	font-family: $topbar-title-font-family;
+	font-size: $topbar-title-font-size;
+}
+
+.top-bar-left,
+.top-bar-right {
+	flex: 0 0 auto;
+}
+
+footer {
+	text-align: center;
+	font-size: $footer-font-size;
+	border-top: $footer-border;
+	border-bottom: $footer-border;
+}
+
+.hero {
+	@include callout-base;
+	// background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/static/img/17_06_27-142.jpg');
+	background-size: cover;
+	background-position: center;
+	border: 0;
+	padding: 3rem;
+}

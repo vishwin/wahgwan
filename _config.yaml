@@ -1,0 +1,15 @@
+defaults:
+        -
+                scope:
+                        path: ""
+                values:
+                        layout: "base"
+
+sass:
+        style: compressed
+
+host: ::1
+show_dir_listing: true
+
+plugins:
+        - jekyll-assets
