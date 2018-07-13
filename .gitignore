@@ -3,3 +3,4 @@ _site/
 .jekyll-cache/
 .sass-cache/
 node_modules/
+_assets/js/*.min.js
