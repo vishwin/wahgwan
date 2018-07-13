@@ -22,12 +22,29 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 	</div>
 	<div id="responsive-top-bar">
 		<nav class="top-bar-right">
-			<ul class="vertical medium-horizontal menu">
-				<li{% if page.title contains "About" %} class="is-active"{% endif %}><a href="/about.html">About</a></li>
+			<ul class="vertical medium-horizontal menu dropdown" data-dropdown-menu>
+				<li{% if page.section contains "About" %} class="is-active"{% endif %}>
+					<a>About</a>
+					<ul class="menu vertical">
+						<li><a href="/about">Overview</a></li>
+						<li><a href="/about/why">Why Wahgwan?</a></li>
+						<li><a href="/about/partners">Partners &amp; affiliations</a></li>
+					</ul>
+				</li>
 				<li><a href="http://blog.wahgwan.xyz/">Blog</a></li>
-				<li{% if page.title contains "Consulting" %} class="is-active"{% endif %}><a href="/consulting.html">Consulting</a></li>
-				<li{% if page.title contains "Specialty" %} class="is-active"{% endif %}><a href="/specialty.html">Specialty</a></li>
-				<li{% if page.title contains "Contact" %} class="is-active"{% endif %}><a href="/contact.html">Contact</a></li>
+				<li{% if page.section contains "Consulting" %} class="is-active"{% endif %}>
+					<a>Consulting</a>
+					<ul class="menu vertical">
+						<li><a href="/consulting">Overview</a></li>
+						<li><a hraf="/consulting/audits">Technical audits</a></li>
+						<li><a href="/consulting/development">Business technology development</a></li>
+						<li><a href="/consulting/energy">Energy reduction</a></li>
+						<li><a href="/consulting/continuity">Business continuity</a></li>
+						<li><a href="/consulting/management">Management</a></li>
+					</ul>
+				</li>
+				<li{% if page.title contains "training" %} class="is-active"{% endif %}><a href="/training">Learn tech!</a></li>
+				<li{% if page.title contains "Contact" %} class="is-active"{% endif %}><a href="/contact">Contact</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -35,11 +52,10 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 {{ content }}
 <footer class="align-middle">
 	A proud member of:
-	<div class="grid-container fluid"><div class="grid-x align-middle">
-		<div class="small-6 medium-auto cell"><a href="http://www.mlcc.org/" title="Main Line Chamber of Commerce"><img alt="MLCC" data-interchange="[{% asset MLCC.png magick:resize=100 @path %}, small], [{% asset MLCC.png magick:resize=120 @path %}, medium]"></a></div>
-		<div class="small-6 medium-auto cell"><img alt="DVBPN" data-interchange="[{% asset DVBPN.png magick:resize=150 @path %}, small], [{% asset DVBPN.png magick:resize=240 @path %}, medium]"></div>
-		<div class="small-6 medium-auto cell"><a href="http://www.localentrepreneurnetwork.com/">Local Entrepreneur Network</a></div>
+	<div class="grid-container fluid"><div class="grid-x align-middle grid-padding-x align-center">
+		<div class="small-6 medium-auto cell"><a href="http://www.mlcc.org/" title="Main Line Chamber of Commerce"><img alt="MLCC" data-interchange="[{% asset MLCC2018.png magick:resize=100 @path %}, small], [{% asset MLCC2018.png magick:resize=120 @path %}, medium]"></a></div>
 		<div class="small-6 medium-auto cell"><a href="http://www.phillylinux.org/" title="Philadelphia Linux Users Group"><img alt="PLUG" data-interchange="[{% asset PLUG.png magick:resize=100 @path %}, small], [{% asset PLUG.png magick:resize=150 @path %}, medium]"></a></div>
+		<div class="small-6 medium-auto cell"><img alt="DVBPN" data-interchange="[{% asset DVBPN.png magick:resize=150 @path %}, small], [{% asset DVBPN.png magick:resize=240 @path %}, medium]"></div>
 	</div></div>
 	Copyright &copy; 2018 Wahgwan Industry Limited
 </footer>

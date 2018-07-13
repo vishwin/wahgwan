@@ -11,16 +11,21 @@
 @import "../node_modules/foundation-sites/scss/foundation";
 
 @include foundation-global-styles;
-@include foundation-xy-grid-classes;
-@include foundation-flex-classes;
-@include foundation-typography;
 @include foundation-forms;
+@include foundation-typography;
+
+@include foundation-xy-grid-classes;
+
 @include foundation-button;
 @include foundation-callout;
+
 @include foundation-menu;
 @include foundation-menu-icon;
-@include foundation-visibility-classes;
+@include foundation-dropdown-menu;
+
 @include foundation-float-classes;
+@include foundation-flex-classes;
+@include foundation-visibility-classes;
 
 .top-bar {
 	@include top-bar-container;

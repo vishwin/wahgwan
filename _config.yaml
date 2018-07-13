@@ -9,7 +9,8 @@ sass:
         style: compressed
 
 host: ::1
-show_dir_listing: true
+permalink: pretty
+show_dir_listing: false
 
 plugins:
         - jekyll-assets
